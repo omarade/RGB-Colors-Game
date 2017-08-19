@@ -1,0 +1,21 @@
+body {
+	background-color: #232323;
+}
+
+.square {
+	width: 30%;
+	background-color: purple;
+	height: 150px;
+	margin: 1.66%;
+	float: left;
+	border-radius: 25px;
+}
+
+#container{
+	width: 500px;
+	margin: 0 auto;
+}
+
+h1 {
+	color: white;
+}
