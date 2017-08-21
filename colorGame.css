@@ -1,5 +1,44 @@
 body {
 	background-color: #232323;
+	margin: 0;
+}
+
+#head {
+	width: 100%;
+}
+
+#firstH {
+	background-color: rgb(16, 140, 117);
+	padding: 10px 0;	
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 23px;
+	color: white;
+}
+
+
+#CD {
+	margin:10px 0 !important;
+	font-size: 40px;
+}
+
+#nav {
+	margin-bottom: 15px;
+	height: 20px;
+	background-color: white;
+	text-align: center;
+}
+
+button {
+	background-color: white;
+	outline: none;
+	border: none;
+}
+
+#result {
+	display: inline-block;
+	width: 15em;
+	/* padding: 0 10%; */
 }
 
 .square {
@@ -16,6 +55,8 @@ body {
 	margin: 0 auto;
 }
 
-h1 {
-	color: white;
+.fadeOut {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s 0.7s, opacity 0.7s linear;
 }
