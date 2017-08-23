@@ -1,9 +1,9 @@
 let squares = document.querySelectorAll(".square")
-let squares1 = document.querySelectorAll(".square1")
-let squares2 = document.querySelectorAll(".square2")
-let CD = document.querySelector("#CD")
+let squares3 = document.querySelectorAll(".square3")
+let squaresHidden = document.querySelectorAll(".squareH")
+let colorDisplay = document.querySelector("#colorDisplay")
 let reBtn = document.querySelector("#newColors")
-let head = document.querySelector("#firstH")
+let h1 = document.querySelector("h1")
 let result = document.querySelector("#result")
 let hardModebtn = document.querySelector("#hardMode")
 let easyModebtn = document.querySelector("#easyMode")
@@ -25,8 +25,8 @@ function init() {
 			rightColorPicker(squares)		
 		}
 		else{
-			giveColors(squares1)
-			rightColorPicker(squares1)
+			giveColors(squares3)
+			rightColorPicker(squares3)
 		}
 		refresh()
 	})	
@@ -48,14 +48,14 @@ function giveColors (mode) {
 
 function rightColorPicker(mode) {
 	rightColor = mode[Math.floor(Math.random() * mode.length)].style.backgroundColor
-	CD.textContent = rightColor
+	colorDisplay.textContent = rightColor
 }
 
 function checkPressedColor(){
 	if(this.style.backgroundColor === rightColor){
 		result.textContent = "CORRECT"
 		reBtn.textContent = "PLAY AGAIN?"
-		head.style.backgroundColor = rightColor
+		h1.style.backgroundColor = rightColor
 		squares.forEach(function(square){
 			square.classList.remove("fadeOut")
 			square.style.backgroundColor = rightColor
@@ -75,8 +75,8 @@ function hardMode() {
 		refresh()
 		easyModebtn.classList.remove("active")
 		this.classList.add("active")
-		squares2.forEach(function(square2) {
-			square2.style.visibility = "visible"
+		squaresHidden.forEach(function(square) {
+			square.style.visibility = "visible"
 		})
 		giveColors(squares)
 		rightColorPicker(squares)
@@ -91,16 +91,19 @@ function easyMode() {
 		refresh()
 		hardModebtn.classList.remove("active")
 		this.classList.add("active")
-		squares2.forEach(function(square2) {
-			square2.style.visibility = "hidden"
+		squaresHidden.forEach(function(square) {
+			square.style.visibility = "hidden"
 		})
-		giveColors(squares1)
-		rightColorPicker(squares1)
+		giveColors(squares3)
+		rightColorPicker(squares3)
 	}
 }
 
 function refresh() {
 	reBtn.textContent = "NEW COLORS"
 	result.textContent = ""
-	head.style.backgroundColor = "rgb(16, 140, 117)"
+	h1.style.backgroundColor = "rgb(16, 140, 117)"
+	squares.forEach(function(square){
+		square.classList.remove("fadeOut")		
+	})
 }
